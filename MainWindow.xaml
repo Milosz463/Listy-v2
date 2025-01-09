@@ -1,0 +1,50 @@
+<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <DataGrid ItemsSource="{Binding ListaGier}"
+                  RowBackground="Beige"
+                  AlternationCount="3"
+                  AlternatingRowBackground="Coral">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="Nazwa gry"
+                    Binding="{Binding Nazwa}"/>
+
+                <DataGridComboBoxColumn Header="Gatunek"
+                                        SelectedItemBinding="{Binding Gatunek}"
+                                        x:Name="KolumnaGatuenk"/>
+
+                <DataGridCheckBoxColumn
+                    Header="Tryb wieloosobowy"
+                    Binding="{Binding Multiplayer}"/>
+
+                <DataGridTextColumn
+                    Header="Minimalny wiek gracza"
+                    Binding="{Binding Wiek}"
+                    />
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <UniformGrid Columns="2">
+            <Label>Nazwa gry</Label>
+            <TextBox x:Name="nazwagry"></TextBox>
+            <Label>Gatunek</Label>
+            <ComboBox x:Name="GatunkiComboBox"  ItemsSource="{Binding gatunki}"></ComboBox>
+            <Label>Wiek</Label>
+            <TextBox x:Name="WiekTextBox"></TextBox>
+            <Label>Multiplayer</Label>
+            <CheckBox x:Name="Multi"></CheckBox>
+            <TextBlock></TextBlock>
+            <Button Click="Button_Click">dodaj do listy</Button>
+        </UniformGrid>
+
+    </StackPanel>
+</Window>
