@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,7 +17,7 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-       public List<GraKomp> ListaGier { get; set; } 
+       public ObservableCollection<GraKomp> ListaGier { get; set; } 
         public List<string> gatunki { get; set; } = new List<string>() { "rpg", "zrecznosciowa", "fantasy", "FPS" };
         public MainWindow()
         {
@@ -42,7 +43,8 @@ namespace WpfApp2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            string nazwa=nazwagry.Text;
+            
 
         }
     }
